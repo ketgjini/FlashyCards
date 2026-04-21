@@ -1,18 +1,18 @@
 services:
   mongodb:
     image: mongo:8
-    container_name: nederlands-flashcard-mongodb
+    container_name: flashy-cards-mongodb
     restart: unless-stopped
     ports:
       - "27017:27017"
     networks:
-      - nederlands-flashcard-net
+      - flashy-cards-net
     volumes:
-      - nederlands-flashcard-data:/data/db
+      - flashy-cards-data:/data/db
 
   mongo-express:
     image: mongo-express:1.0.2
-    container_name: nederlands-flashcard-mongo-ui
+    container_name: flashy-cards-mongo-ui
     depends_on:
       - mongodb
     restart: unless-stopped
@@ -24,11 +24,11 @@ services:
       ME_CONFIG_BASICAUTH_USERNAME: admin
       ME_CONFIG_BASICAUTH_PASSWORD: root
     networks:
-      - nederlands-flashcard-net
+      - flashy-cards-net
 
 volumes:
-  nederlands-flashcard-data:
+  flashy-cards-data:
 
 networks:
-  nederlands-flashcard-net:
+  flashy-cards-net:
     driver: bridge

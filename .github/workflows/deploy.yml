@@ -1,0 +1,58 @@
+name: FlashyCards CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ----- APPLICATION STEPS ----- #
+
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 25
+
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build frontend
+        run: npm run build
+
+      # ----- DOCKER STEPS ----- #
+
+      - name: Log in to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login \
+            -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/flashy-cards:latest .
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/flashy-cards:latest
+
+      # ----- DEPLOY TO ORACLE VM ----- #
+
+#      - name: Deploy flashy-cards
+#        uses: appleboy/ssh-action@v1
+#        with:
+#          host: ${{ secrets.ORACLE_HOST }}
+#          username: ubuntu
+#          key: ${{ secrets.ORACLE_SSH_KEY }}
+#          script: |
+#            cd ~/flashy_cards
+#            docker compose pull flashy-cards
+#            docker compose up -d flashy-cards
