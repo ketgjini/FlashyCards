@@ -46,13 +46,13 @@ jobs:
 
       # ----- DEPLOY TO ORACLE VM ----- #
 
-#      - name: Deploy flashy-cards
-#        uses: appleboy/ssh-action@v1
-#        with:
-#          host: ${{ secrets.ORACLE_HOST }}
-#          username: ubuntu
-#          key: ${{ secrets.ORACLE_SSH_KEY }}
-#          script: |
-#            cd ~/flashy_cards
-#            docker compose pull flashy-cards
-#            docker compose up -d flashy-cards
+      - name: Deploy flashy-cards
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.ORACLE_HOST }}
+          username: ubuntu
+          key: ${{ secrets.ORACLE_SSH_KEY }}
+          script: |
+            cd ~/flashycards
+            docker compose pull flashy-cards
+            docker compose up -d flashy-cards
