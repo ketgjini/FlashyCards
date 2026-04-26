@@ -20,7 +20,7 @@ export async function GET() {
 export async function POST(req: Request) {
   const body = await req.json();
 
-  const client = await clientPromise;
+  const client = await getClientPromise();
   const db = client.db("flashycards");
 
   const result = await db.collection("cards").insertOne(body);
