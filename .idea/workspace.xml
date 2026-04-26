@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f5b6a16-fd70-4693-b7a8-3b4adfd159a4" name="Changes" comment="Pipeline fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/flashcards/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/flashcards/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/mongo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/mongo.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +109,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777206645566</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Pipeline fix">
+      <option name="closed" value="true" />
+      <created>1777206799135</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1777206799135</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Pipeline fix">
+      <option name="closed" value="true" />
+      <created>1777207085654</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777207085654</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -13,8 +13,10 @@ declare global {
 }
 
 export function getClientPromise(): Promise<MongoClient> {
+  const safeUri = uri;
+
   if (!global._mongoClientPromise) {
-    client = new MongoClient(uri);
+    client = new MongoClient(safeUri);
     global._mongoClientPromise = client.connect();
   }
 
