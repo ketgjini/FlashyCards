@@ -1,10 +1,10 @@
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
-import clientPromise from "../../lib/mongo";
+import { getClientPromise } from "../../lib/mongo";
 
 export async function GET() {
-  const client = await clientPromise;
+  const client = await getClientPromise();
   const db = client.db("flashycards");
 
   const flashcards = await db.collection("cards").find({}).toArray();
