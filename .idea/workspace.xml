@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f5b6a16-fd70-4693-b7a8-3b4adfd159a4" name="Changes" comment="Add .gitignore">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7f5b6a16-fd70-4693-b7a8-3b4adfd159a4" name="Changes" comment="Pipeline fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/flashcards/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/flashcards/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/mongo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/mongo.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +14,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/mongodb-impl" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,7 +78,71 @@
       <option name="project" value="LOCAL" />
       <updated>1776794923012</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Activate CI/CD, update .gitignore">
+      <option name="closed" value="true" />
+      <created>1777206094616</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777206094616</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Pipeline fix">
+      <option name="closed" value="true" />
+      <created>1777206446779</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777206446779</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Pipeline fix">
+      <option name="closed" value="true" />
+      <created>1777206538404</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777206538404</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Pipeline fix">
+      <option name="closed" value="true" />
+      <created>1777206645566</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777206645566</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Pipeline fix">
+      <option name="closed" value="true" />
+      <created>1777206799135</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1777206799135</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Pipeline fix">
+      <option name="closed" value="true" />
+      <created>1777207085654</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777207085654</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Pipeline fix">
+      <option name="closed" value="true" />
+      <created>1777207176613</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1777207176614</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Pipeline fix">
+      <option name="closed" value="true" />
+      <created>1777207309999</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1777207309999</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +170,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add .gitignore" />
+    <MESSAGE value="Activate CI/CD, update .gitignore" />
+    <MESSAGE value="Pipeline fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pipeline fix" />
   </component>
 </project>
