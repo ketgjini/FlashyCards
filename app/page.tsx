@@ -14,6 +14,7 @@ interface FlashcardItem {
 export default function Home() {
   const [cards, setCards] = useState<FlashcardItem[]>([]);
   const [index, setIndex] = useState(0);
+  const [toast, setToast] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/api/flashcards')
@@ -21,7 +22,7 @@ export default function Home() {
       .then(setCards);
   }, []);
 
-  const current = cards[index];
+  const current = cards.length > 0 ? cards[index] : null;
 
   function next() {
     setIndex(prev => Math.min(prev + 1, cards.length - 1));
@@ -31,8 +32,38 @@ export default function Home() {
     setIndex(prev => Math.max(prev - 1, 0));
   }
 
+  const handleDelete = (id: string) => {
+    setCards(prev => {
+      const updated = prev.filter(card => card._id !== id);
+
+      setIndex(prevIndex =>
+          updated.length === 0 ? 0 : Math.min(prevIndex, updated.length - 1)
+      );
+
+      setToast("Flashcard deleted!");
+
+      setTimeout(() => {
+        setToast(null);
+      }, 2000);
+
+      return updated;
+    });
+  };
+
+  const refresh = async () => {
+    const res = await fetch('/api/flashcards');
+    const data = await res.json();
+    setCards(data);
+  };
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-slate-50 p-8">
+
+      {toast && (
+          <div className="fixed top-5 left-1/2 -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded shadow">
+            {toast}
+          </div>
+      )}
 
       <div className="absolute top-6 right-6">
         <Link href="/add" className="bg-orange-600 text-white px-4 py-2 rounded">
@@ -47,9 +78,12 @@ export default function Home() {
       {current ? (
         <>
           <Flashcard
-            word={current.word}
-            meaning={current.meaning}
-            description={current.description}
+              id={current._id}
+              word={current.word}
+              meaning={current.meaning}
+              description={current.description}
+              onDelete={handleDelete}
+              onUpdate={refresh}
           />
 
           <div className="flex gap-6 mt-6">
